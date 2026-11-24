@@ -13,6 +13,8 @@ struct PreferencesView: View {
     @AppStorage(PreferenceKeys.activateAtLaunch) private var activateAtLaunch = false
     @AppStorage(PreferenceKeys.suppressLaunchMessage) private var suppressLaunchMessage = false
     @AppStorage(PreferenceKeys.deactivateOnManualSleep) private var deactivateOnManualSleep = false
+    @AppStorage(PreferenceKeys.deactivateOnLowBattery) private var deactivateOnLowBattery = false
+    @AppStorage(PreferenceKeys.lowBatteryThreshold) private var lowBatteryThreshold = LowBatteryPolicy.defaultThreshold
     @AppStorage(PreferenceKeys.keepAppsActive) private var keepAppsActive = false
 
     var body: some View {
@@ -76,6 +78,32 @@ struct PreferencesView: View {
                 Toggle("Deactivate when device goes to sleep manually", isOn: self.$deactivateOnManualSleep)
                     .font(.system(size: 13))
                     .accessibilityIdentifier("PreferencesView.deactivateOnManualSleepToggle")
+
+                // Only shown on Macs that have a battery
+                if BatteryMonitor.currentStatus() != nil {
+                    HStack(spacing: 8) {
+                        Toggle("Deactivate on low battery:", isOn: self.$deactivateOnLowBattery)
+                            .font(.system(size: 13))
+                            .accessibilityIdentifier("PreferencesView.deactivateOnLowBatteryToggle")
+
+                        Picker("", selection: self.$lowBatteryThreshold) {
+                            ForEach(LowBatteryPolicy.options, id: \.self) { percent in
+                                Text("\(percent)%").tag(percent)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .labelsHidden()
+                        .frame(width: 80)
+                        .disabled(!self.deactivateOnLowBattery)
+                        .accessibilityLabel(Text("Low battery level"))
+                        .accessibilityIdentifier("PreferencesView.lowBatteryThresholdPicker")
+                    }
+
+                    Text("Turns off at or below this level. Only applies when running on battery power.")
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+                        .padding(.leading, 20)
+                }
 
                 Toggle("Show this message when starting Triple Espresso", isOn: Binding(
                     get: { !self.suppressLaunchMessage },

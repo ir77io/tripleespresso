@@ -23,6 +23,7 @@ class TripleEspressoViewModel: ObservableObject {
     private var timeoutTimer: Timer?
     private var displayTimer: Timer?
     private var cancellables = Set<AnyCancellable>()
+    private let batteryMonitor = BatteryMonitor()
 
     // MARK: - Initialization
 
@@ -32,6 +33,7 @@ class TripleEspressoViewModel: ObservableObject {
         self.timeRemaining = nil
 
         self.setupObservers()
+        self.setupBatteryMonitoring()
 
         // Check if we should activate at launch
         if UserDefaults.standard.bool(forKey: PreferenceKeys.activateAtLaunch) {
@@ -113,6 +115,8 @@ class TripleEspressoViewModel: ObservableObject {
         if UserDefaults.standard.bool(forKey: PreferenceKeys.keepAppsActive) {
             ActivitySimulator.shared.startMonitoring()
         }
+
+        self.deactivateIfBatteryLow()
     }
 
     /// Deactivates Triple Espresso
@@ -196,6 +200,36 @@ class TripleEspressoViewModel: ObservableObject {
             .store(in: &self.cancellables)
     }
 
+    private func setupBatteryMonitoring() {
+        self.batteryMonitor.onChange = { [weak self] _ in
+            Task { @MainActor in
+                self?.deactivateIfBatteryLow()
+            }
+        }
+        self.batteryMonitor.start()
+
+        // Re-check when the preference is switched on
+        NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification)
+            .sink { [weak self] _ in
+                Task { @MainActor in
+                    self?.deactivateIfBatteryLow()
+                }
+            }
+            .store(in: &self.cancellables)
+    }
+
+    /// Turns sleep prevention off when running on battery at or below the low-battery threshold.
+    private func deactivateIfBatteryLow() {
+        guard
+            self.isActive,
+            UserDefaults.standard.bool(forKey: PreferenceKeys.deactivateOnLowBattery),
+            LowBatteryPolicy.shouldDeactivate(
+                BatteryMonitor.currentStatus(),
+                threshold: LowBatteryPolicy.storedThreshold()
+            ) else { return }
+        self.deactivate()
+    }
+
     private func cancelTimers() {
         self.timeoutTimer?.invalidate()
         self.timeoutTimer = nil
@@ -211,5 +245,7 @@ enum PreferenceKeys {
     static let defaultDuration = "CADefaultDuration"
     static let suppressLaunchMessage = "CASuppressLaunchMessage"
     static let deactivateOnManualSleep = "CADeactivateOnManualSleep"
+    static let deactivateOnLowBattery = "CADeactivateOnLowBattery"
+    static let lowBatteryThreshold = "CALowBatteryThreshold"
     static let keepAppsActive = "CAKeepAppsActive"
 }

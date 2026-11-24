@@ -43,3 +43,7 @@
 /* System messages */
 "Triple Espresso prevents sleep" = "Triple Espresso がスリープを防ぎます";
 
+/* Low battery */
+"Deactivate on low battery:" = "バッテリー残量が少ないとき無効にする:";
+"Turns off at or below this level. Only applies when running on battery power." = "この残量以下になると無効になります。バッテリー駆動時のみ適用されます。";
+"Low battery level" = "バッテリー残量の下限";

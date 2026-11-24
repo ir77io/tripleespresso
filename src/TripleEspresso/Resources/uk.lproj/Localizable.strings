@@ -43,3 +43,7 @@
 /* System messages */
 "Triple Espresso prevents sleep" = "Triple Espresso запобігає переходу в режим сну";
 
+/* Low battery */
+"Deactivate on low battery:" = "Вимикати при низькому заряді:";
+"Turns off at or below this level. Only applies when running on battery power." = "Вимикається на цьому рівні або нижче. Діє лише під час роботи від батареї.";
+"Low battery level" = "Рівень низького заряду";

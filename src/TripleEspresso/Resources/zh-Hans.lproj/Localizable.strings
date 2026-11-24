@@ -43,3 +43,7 @@
 /* System messages */
 "Triple Espresso prevents sleep" = "Triple Espresso 会阻止睡眠";
 
+/* Low battery */
+"Deactivate on low battery:" = "电量低时停用：";
+"Turns off at or below this level. Only applies when running on battery power." = "电量等于或低于此值时停用。仅在使用电池供电时生效。";
+"Low battery level" = "低电量级别";

@@ -43,3 +43,7 @@
 /* System messages */
 "Triple Espresso prevents sleep" = "Triple Espresso impide el reposo";
 
+/* Low battery */
+"Deactivate on low battery:" = "Desactivar con batería baja:";
+"Turns off at or below this level. Only applies when running on battery power." = "Se desactiva con este nivel o menos. Solo se aplica cuando se usa la batería.";
+"Low battery level" = "Nivel de batería baja";

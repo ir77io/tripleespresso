@@ -42,3 +42,8 @@
 
 /* System messages */
 "Triple Espresso prevents sleep" = "Triple Espresso voorkomt sluimerstand";
+
+/* Low battery */
+"Deactivate on low battery:" = "Deactiveren bij lage batterij:";
+"Turns off at or below this level. Only applies when running on battery power." = "Wordt uitgeschakeld op of onder dit niveau. Geldt alleen bij gebruik op batterij.";
+"Low battery level" = "Niveau lage batterij";

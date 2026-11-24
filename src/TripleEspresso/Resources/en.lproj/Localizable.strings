@@ -43,3 +43,7 @@
 /* System messages */
 "Triple Espresso prevents sleep" = "Triple Espresso prevents sleep";
 
+/* Low battery */
+"Deactivate on low battery:" = "Deactivate on low battery:";
+"Turns off at or below this level. Only applies when running on battery power." = "Turns off at or below this level. Only applies when running on battery power.";
+"Low battery level" = "Low battery level";
