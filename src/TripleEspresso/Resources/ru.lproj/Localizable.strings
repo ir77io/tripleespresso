@@ -1,0 +1,44 @@
+/* Activation durations */
+"1 minute" = "1 минута";
+"5 minutes" = "5 минут";
+"10 minutes" = "10 минут";
+"15 minutes" = "15 минут";
+"30 minutes" = "30 минут";
+"1 hour" = "1 час";
+"2 hours" = "2 часа";
+"5 hours" = "5 часов";
+"Indefinitely" = "Бессрочно";
+
+/* Status messages */
+"Triple Espresso is active" = "Triple Espresso активен";
+"%d minutes" = "%d минут";
+"%d seconds" = "%d секунд";
+
+/* Menu items */
+"Check for Updates..." = "Проверить обновления...";
+"Preferences..." = "Настройки...";
+"About Triple Espresso" = "О Triple Espresso";
+"Quit" = "Выйти";
+
+/* Preferences instructions */
+"Triple Espresso is now running. You can find its icon in the right side of your menu bar. Click it to disable automatic sleep, click it again to enable automatic sleep." = "Triple Espresso запущен. Его значок находится справа на панели меню. Нажмите, чтобы отключить автоматический сон, нажмите ещё раз, чтобы включить его снова.";
+"Right-click (or ⌃-click) the menu bar icon to show the Triple Espresso menu." = "Щёлкните значок на панели меню правой кнопкой мыши (или с зажатой клавишей ⌃), чтобы открыть меню Triple Espresso.";
+
+/* Preferences labels */
+"Default duration:" = "Длительность по умолчанию:";
+"Activate when starting Triple Espresso" = "Активировать при запуске Triple Espresso";
+"Deactivate when device goes to sleep manually" = "Деактивировать при ручном переводе устройства в сон";
+"Show this message when starting Triple Espresso" = "Показывать это сообщение при запуске Triple Espresso";
+"Keep apps active" = "Поддерживать активность приложений";
+"Prevents apps from becoming inactive and the screen saver from starting." = "Предотвращает переход приложений в неактивный режим и запуск заставки.";
+"Close" = "Закрыть";
+
+/* Menu additions */
+"Activate for" = "Активировать на";
+"Welcome to Triple Espresso" = "Добро пожаловать в Triple Espresso";
+
+/* About credits */
+"© 2006 Tomas Franzén\n© 2018 Michael Jones\n© 2022 Dominic Rodemer\n\nSource code:\nhttps://github.com/ir77io/tripleespresso" = "© 2006 Tomas Franzén\n© 2018 Michael Jones\n© 2022 Dominic Rodemer\n\nИсходный код:\nhttps://github.com/ir77io/tripleespresso";
+
+/* System messages */
+"Triple Espresso prevents sleep" = "Triple Espresso предотвращает переход в сон";
