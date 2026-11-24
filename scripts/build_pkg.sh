@@ -27,7 +27,7 @@ else
     SIGN=(CODE_SIGN_IDENTITY="-" CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="")
 fi
 xcodebuild -project "src/$APP_NAME.xcodeproj" -scheme "$APP_NAME" -configuration Release \
-    -destination "platform=macOS" -derivedDataPath "$BUILD/DerivedData" "${SIGN[@]}" build | tail -3
+    -destination "generic/platform=macOS" ARCHS=arm64 ONLY_ACTIVE_ARCH=NO -derivedDataPath "$BUILD/DerivedData" "${SIGN[@]}" build | tail -3
 
 APP="$BUILD/DerivedData/Build/Products/Release/$APP_NAME.app"
 [[ -d "$APP" ]] || { echo "App not found at $APP"; exit 1; }
