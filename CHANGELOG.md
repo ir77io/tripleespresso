@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Renamed the project to Triple Espresso, with a new bundle identifier (`io.ir77.tripleespresso`).
+- New espresso-cup menu bar icons and app icon.
+- Sleep prevention now holds a single power assertion for as long as it is active, instead of recreating one every 10 seconds with an 8 second timeout. This removes a roughly 2 second gap in each cycle.
+
+### Removed
+
+- The Sparkle auto-updater and the "Check for Updates" menu item. The old update feed pointed at Caffeine's releases.
+- The unused DZFoundation dependency and the network entitlements.
+
+---
+
+*Earlier entries below are from Caffeine, the project this one is based on.*
+
+
+
 ### Added
 
 - VoiceOver support: the menu bar icon announces whether sleep is currently prevented, and the duration menu items announce what they activate.

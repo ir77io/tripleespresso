@@ -1,0 +1,45 @@
+/* Activation durations */
+"1 minute" = "1 Minute";
+"5 minutes" = "5 Minuten";
+"10 minutes" = "10 Minuten";
+"15 minutes" = "15 Minuten";
+"30 minutes" = "30 Minuten";
+"1 hour" = "1 Stunde";
+"2 hours" = "2 Stunden";
+"5 hours" = "5 Stunden";
+"Indefinitely" = "Unbegrenzt";
+
+/* Status messages */
+"Triple Espresso is active" = "Triple Espresso ist aktiviert";
+"%d minutes" = "%d Minuten";
+"%d seconds" = "%d Sekunden";
+
+/* Menu items */
+"Check for Updates..." = "Nach Updates suchen...";
+"Preferences..." = "Einstellungen...";
+"About Triple Espresso" = "Über Triple Espresso";
+"Quit" = "Beenden";
+
+/* Preferences instructions */
+"Triple Espresso is now running. You can find its icon in the right side of your menu bar. Click it to disable automatic sleep, click it again to enable automatic sleep." = "Triple Espresso läuft jetzt. Du findest sein Symbol auf der rechten Seite deiner Menüleiste. Klicke darauf, um den automatischen Ruhezustand zu deaktivieren, und klicke erneut, um ihn wieder zu aktivieren.";
+"Right-click (or ⌃-click) the menu bar icon to show the Triple Espresso menu." = "Klicke mit der rechten Maustaste (oder mit gedrückter ⌃-Taste) auf das Menüleistensymbol, um das Triple Espresso-Menü anzuzeigen.";
+
+/* Preferences labels */
+"Default duration:" = "Standarddauer:";
+"Activate when starting Triple Espresso" = "Triple Espresso beim Start aktivieren";
+"Deactivate when device goes to sleep manually" = "Beim manuellen Ruhezustand deaktivieren";
+"Show this message when starting Triple Espresso" = "Diese Nachricht beim Start von Triple Espresso anzeigen";
+"Keep apps active" = "Apps aktiv halten";
+"Prevents apps from becoming inactive and the screen saver from starting." = "Verhindert, dass Apps inaktiv werden und der Bildschirmschoner startet.";
+"Close" = "Schließen";
+
+/* Menu additions */
+"Activate for" = "Aktivieren für";
+"Welcome to Triple Espresso" = "Willkommen bei Triple Espresso";
+
+/* About credits */
+"© 2006 Tomas Franzén\n© 2018 Michael Jones\n© 2022 Dominic Rodemer\n\nSource code:\nhttps://github.com/ir77io/tripleespresso" = "© 2006 Tomas Franzén\n© 2018 Michael Jones\n© 2022 Dominic Rodemer\n\nQuellcode:\nhttps://github.com/ir77io/tripleespresso";
+
+/* System messages */
+"Triple Espresso prevents sleep" = "Triple Espresso verhindert den Ruhezustand";
+
