@@ -12,7 +12,9 @@ permissions:
 
 jobs:
   build-pkg:
-    runs-on: macos-26 # Apple Silicon. The app icon format (.icon) needs a recent Xcode.
+    # Apple Silicon. macos-15 has a bigger runner pool than macos-26 (jobs there sat queued until
+    # GitHub cancelled them) and ships Xcode 26.x, which the .icon app icon format needs.
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
 
